@@ -1,0 +1,204 @@
+body {
+    background-image: url('file:///C:/Users/vynya/Downloads/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+/* Меню */
+.navbar {
+    background-image: url('file:///C:/Users/vynya/Downloads/klipartz.com.png');
+    background-size: 70% auto; /* Масштаб фото */
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 160px 0; /* Збільшення висоти меню */
+    text-align: left; /* Текст вирівняний ліворуч */
+    width: 40%; /* Ширина меню */
+    float: left;
+    border-radius: 10px; /* Додати закруглення, за бажанням */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Відносне позиціювання */
+    padding-left: 0; /* Видалення відступу всередині елемента ul */
+    justify-content: flex-start; /* Вирівнювання елементів ліворуч */
+}
+
+.navbar li {
+    display: inline-block;
+    position: relative; /* Відносне позиціювання */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    transform: scale(1.2); /* Збільшення тексту */
+    font-family: 'Courier New', Courier, monospace; /* Зміна шрифту */
+    background: linear-gradient(to right, #ff20b5, #001aff); /* Градієнтний колір */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff7e5f;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Позиціювання елементів меню на різних рівнях */
+.navbar li:nth-child(1) {
+    top: -20px; /* Перший елемент */
+}
+
+.navbar li:nth-child(2) {
+    top: 0px; /* Другий елемент */
+}
+
+.navbar li:nth-child(3) {
+    top: 23px; /* Третій елемент */
+}
+
+.navbar li:nth-child(4) {
+    top: 45px; /* Четвертий елемент */
+}
+
+.navbar li:nth-child(5) {
+    top: 70px; /* П'ятий елемент */
+}
+
+/* Фото вчителя */
+.teacher-photo {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Прозорий фон з градієнтом */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    width: 40%; /* Ширина фото вчителя */
+    clear: both;
+}
+
+/* Анонс подій */
+.event-announcement {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Прозорий фон з градієнтом */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    width: 40%; /* Ширина анонсу подій */
+    clear: both;
+}
+
+/* Основний контент */
+.main-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* Новини */
+.news {
+    background: rgba(0, 0, 0, 0.5); /* Фон на пів залитий */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    width: 60%; /* Ширина новин така ж як і у слайдера */
+    clear: both;
+}
+
+/* Стиль для слайдера */
+.slider {
+    width: 60%; /* Ширина слайдера */
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стрілки */
+.prev-arrow, .next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Курсори (точки) */
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}
